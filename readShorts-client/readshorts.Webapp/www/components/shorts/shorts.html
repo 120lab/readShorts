@@ -1,0 +1,233 @@
+<!--
+	Main Story PageEach story chosen for the user,
+	presented in a single full page Design:Each Main Story Page is presented on a “card”.  
+
+-->
+
+<ion-view id="shorts-view">
+	<!-- PLM counter is placed on the right hand side of the nav-bar -->
+	<ion-nav-buttons side="right">
+		<div class="plm-container" ng-click="openPLM()">
+
+
+			<span> People<strong><span style="font-style:italic">LIKE </span> ME</strong> </span>
+			<div class="plm-data">
+				<flip-digit class="box digit" id="digit1" targetdigit="{{plmData[0]}}"></flip-digit>
+				<flip-digit class="box digit" id="digit2" targetdigit="{{plmData[1]}}"></flip-digit>
+				<flip-digit class="box digit" id="digit3" targetdigit="{{plmData[2]}}"></flip-digit>
+				<flip-digit class="box digit" id="digit4" targetdigit="{{plmData[3]}}"></flip-digit>
+			</div>
+		</div>
+    </ion-nav-buttons>
+
+	<!-- Using the title area for positioning the Main menu button at the center of the top navbar -->
+	<ion-nav-title>
+		<button ng-show="!shortCardOpen"  id="main-menu-button" ng-click="openMainMenuModal()"
+												ng-class="{'main-button-home shake': selectedFeedType=='shorts' && shortsReady==true,
+												'main-button-my-bookmarks':  selectedFeedType=='bookmarks',
+												'main-button-followed':  selectedFeedType=='followedShorts',
+												'main-button-top':  selectedFeedType=='topShorts',
+												'main-button-my-favorites':  selectedFeedType=='favorites',
+												'main-button-my-friends-share ':  selectedFeedType=='shared'}" >
+		</button>
+
+		<button ng-show="shortCardOpen" id="main-menu-button" class="icon ion-close"  style="background-color:#2a2a2a " ng-click="closeShortsDetails()">
+		</button>
+	</ion-nav-title>
+
+	<!-- position the Logo on the left side of the nav-bar -->
+	<ion-nav-buttons side="left">
+      <div class="logo">
+        <!-- {{getFeedName()}} -->
+        Shorts
+      </div>
+    </ion-nav-buttons>
+
+    <!-- Short footer. Hold the user profile picture, and the 'Follow', 'Like',
+    	 'Share' & 'bbokmark' buttons -->
+    <!--ion-footer-bar align-title="left" class="short-footer row row-center" ng-hide="hideFooter">
+		<div class="writer-icon" ng-show="cards.active.length != 0">
+			<img class="personal-image-small" 
+				ng-src="{{cards.active[0].WriterPicturePath}}">
+			{{cards.active[0].WriterFirstName}}.{{cards.active[0].WriterLastName[0]}}
+		</div>
+		<div style="margin: 0 auto" ng-click="toggleFollowWriter(cards.active[0].ShortKey)">
+			<div class="interactive-button" style="display: inline-block;"
+				ng-class="cards.active[0].IsUserAccountWriterFollowed ? 'follow-active' : 'follow-button' ">
+			</div>
+			<span class="follow-txt" ng-show="!cards.active[0].IsUserAccountWriterFollowed">Follow</span>
+			<span class="follow-txt" ng-show="cards.active[0].IsUserAccountWriterFollowed">Following</span>
+		</div>
+		<div class="interactive-button" 
+			ng-click="toggleShortLike(cards.active[0].ShortKey)"
+			ng-class="cards.active[0].ShortSignAsLike ? 'like-button-active' : 'like-button-empty' ">
+		</div>
+
+		<div class="interactive-button share-button-empty" ng-click="openShortsShare()"
+					ng-class="isShortShareOpen ? 'share-button-active' : 'share-button-empty' ">
+			<div id="modal-arrow" ng-show="isShortShareOpen"></div>
+		</div>
+		<div class="interactive-button" 
+			ng-click="toggleShortBookmark(cards.active[0].ShortKey)"
+			ng-class="cards.active[0].ShortSignAsBookmark ? 'bookmark-active' : 'bookmark-empty' ">
+		</div>
+	</ion-footer-bar-->
+
+	<!-- Page content goes here -->
+	<ion-content class="center " 
+				overflow-scroll="false" 
+				has-bouncing="false"
+				scrollbar-y="false"
+				scroll="false"
+				background-image="cards.active[0].CategoryPicturePath">
+
+		<div class="sh-content sh-center darken" ng-click="closeShortShare($event)"> </div>
+			<p class="story-name" ng-class="{'rtl':isRtlText(0)}">{{cards.active[0].Title}}</p>
+
+			<swipe-cards>
+				<swipe-card  ng-repeat="card in cards.active track by card.timeStamp" on-destroy="cardDestroyed($index)" min-threshold="0.2" drag="{{!shortCardOpen}}" >
+					<!--p class="story-name">{{cards.active[$index].Title}}</p-->
+					<div full-height-card card-opened="{{shortCardOpen&& $index==0}}" ng-class="shortCardOpen && $index==0 ? 'sh-card active' : 'sh-card'" >
+							<div id="writer-shortened-name" ng-show="!shortCardOpen">{{cards.active[$index].WriterFirstName}}.{{cards.active[$index].WriterLastName[0]}}</div>
+							<div class="story-quote quote-closed" ng-class="{'rtl':isRtlText($index)}" ng-show="!shortCardOpen" ng-click="openShortsDetails(cards.active[0].ShortKey)">{{cards.active[$index].Quote}}	
+			              	</div>
+			              	<div ng-show="!shortCardOpen" class="more-button " ng-click="openShortsDetails(cards.active[0].ShortKey)">
+			              		<div>READ MORE</div>
+								<div class="card-footer" ng-show="!shortCardOpen">
+									<div class="inner-button" ng-click="toggleShortLike(cards.active[0].ShortKey,$event)">
+										<div class="interactive-button" ng-class="cards.active[0].ShortSignAsLike ? 'like-button-active' : 'like-button-empty' "></div>
+									</div>
+
+									<div  class="inner-button" ng-click="openShortsShare($event)">
+										<div class="interactive-button share-button-empty" ng-class="isShortShareOpen ? 'share-button-active' : 'share-button-empty' "></div>
+									</div>
+	
+									<div class="inner-button" ng-click="toggleShortBookmark(cards.active[0].ShortKey, $event)">
+										<div class="interactive-button" ng-class="cards.active[0].ShortSignAsBookmark ? 'bookmark-active' : 'bookmark-empty' "></div>
+									</div>
+
+									<div  style ="border-right-width:0px" class="inner-button" ng-click="shortDownload($event)">
+										<div class="interactive-button" ng-class="cards.active[0].ShortSignAsDownloaded ? 'download-active' : 'download-empty' "></div>
+									</div>
+								</div>
+
+			              	</div>
+			              	<!--div ng-show="!shortCardOpen" class="more-button " ng-click="openShortsDetails(cards.active[0].ShortKey)">READ MORE</div-->
+
+
+							<div id="shorts-details-container" ng-show="shortCardOpen && $index==0">
+
+								<ion-content class="center " 
+												overflow-scroll="false" 
+												has-bouncing="false"
+												scrollbar-y="false"
+												scroll="true"
+												delegate-handle="cardScroll"
+												on-scroll="contentIsScrolling()">
+  									
+									<div id="story-name" ng-class="{'rtl':isRtlText($index)}">{{cards.active[0].Title}}</div>
+									<div id="story-text" ng-class="{'rtl-text':isRtlText($index),
+																	'story-text-medium':getFontSize()=='medium',
+																	'story-text-large':getFontSize()=='large'}">
+																	{{cards.active[0].Text}}</div>
+
+									<div class="button-bar short-footer" ng-show="shortCardOpen">
+										<div class="interactive-button" 
+											ng-click="toggleShortLike(cards.active[0].ShortKey, $event)"
+											ng-class="cards.active[0].ShortSignAsLike ? 'like-button-active' : 'like-button-empty' ">
+										</div>
+
+										<div class="interactive-button share-button-empty" ng-click="openShortsShare($event)"
+													ng-class="isShortShareOpen ? 'share-button-active' : 'share-button-empty' ">
+											<div id="modal-arrow" ng-hide="!isShortShareOpen"></div>
+										</div>
+										<div class="interactive-button" 
+											ng-click="toggleShortBookmark(cards.active[0].ShortKey, $event)"
+											ng-class="cards.active[0].ShortSignAsBookmark ? 'bookmark-active' : 'bookmark-empty' ">
+										</div>
+									</div>
+
+									<p id="category-header">Category</p>
+									<button id="category-button" class="button button-outline button-small button-dark">{{cards.active[0].CategoryTypeName}} </button>
+
+									<hr>
+
+									<img class="personal-image" ng-src="{{cards.active[0].WriterPicturePath}}">
+									
+									<div id="writer-name">{{cards.active[0].WriterFirstName}} {{cards.active[0].WriterLastName}}</div>
+									
+									<div style="margin: 0 auto;width:50%" ng-click="toggleFollowWriter(cards.active[0].ShortKey)">
+										<div class="" style="display: inline-block;width:100%"
+											ng-class="cards.active[0].IsUserAccountWriterFollowed ? 'follow-active' : 'follow-button' ">
+										</div>
+									</div>
+									<div id="writer-bio">{{cards.active[0].WriterShortBio}}</div>
+
+									<div id="writer-external-link"><a ng-href="{{cards.active[0].WriterExternalLink}}">{{cards.active[0].WriterExternalLinkText}}</a></div>
+
+									<hr>
+
+									<div style="margin: 0 5%;" ng-if="shortCardOpen && $index==0">
+										<div class="fb-comments" data-numposts="10" data-colorscheme="light" data-href="{{getFBCommentHref()}}" data-width="100%" id="commentbox"></div>
+									</div>
+
+									<hr>
+
+									<button class="button button-clear button-dark icon ion-chevron-up" ng-click="scrollShortToTop()"></button>
+								</ion-content>
+							</div>
+
+
+			        </div>
+				</swipe-card>
+				<!-- *************************
+				End Card
+				- 'drag' is set to false. The user cannot drag it.
+				- 'refreshCards()' reloads all cards that have NOT been discarded.
+				************************* -->
+				<!--swipe-card id="end-card" drag="false">
+					<div class="sh-card">
+						<div class="story-quote">
+							<div>There are no new Shorts.</div>
+							<div>Please come back later</div>
+				        </div>
+			        </div>			
+			    </swipe-card -->
+			</swipe-cards>
+
+			<div class="social-share-frame" ng-class="{'social-share-frame-opened':shortShareActive==true, 'social-share-frame-closed': shortShareActive==false}" ng-click="openShortsShare($event)">
+				<div id="social-share-icons">
+					<div class="icon ion-social-twitter" ng-click="twitterShare($event)"></div>
+					<div class="icon ion-social-facebook share-dest" ng-click="facebookShare($event)"></div>
+					<div class="icon ion-social-whatsapp-outline" ng-click="whatsappShare($event)"></div>
+					<div class="" ng-click="linkedinShare($event)">in</div>
+					<div class="icon ion-social-pinterest" ng-click="pinterestShare($event)"></div>
+					<div class="icon ion-email" ng-click="emailShare($event)"></div>
+				</div>
+				<div id="download-short" ng-click="shortDownload($event)"></div>
+			</div>
+	</ion-content>
+
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">My Modal title</h1>
+    </ion-header-bar>
+    <ion-content>
+      Hello!
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<script type="text/ng-template" id="timerTemplate.html">
+	<div class="inner-box">
+		<span class="top">{{current}}</span>
+		<span class="top-next">{{next}}</span>
+		<span class="bottom-next">{{next}}</span>
+		<span class="bottom">{{current}}</span>
+	</div>
+</script>
+
+</ion-view>
+

@@ -1,0 +1,36 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <h2>Create new writer</h2>
+    <form ng-submit="createWriter(task)">
+      <div class="list">
+  <label class="item item-input">
+    <input type="text" placeholder="Writer Email" ng-model="task.EmailAddress">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="First Name" ng-model="task.FirstName">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Last Name" ng-model="task.LastName">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Picture url" ng-model="task.PicturePath">
+  </label>
+  <label class="item item-input">
+    <textarea placeholder="Short bio" rows="7" ng-model="task.ShortBio"></textarea>
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Personal id" ng-model="task.PersonalId">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Address"  ng-model="task.Address">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Mobile Phone" ng-model="task.MobilePhone">
+  </label>
+  
+  <div class="padding">
+    <button type="submit" ng-disabled="InProcess" class="button button-block button-positive">Create writer</button>
+  </div>
+  </div>
+  </ion-content>
+</ion-view>

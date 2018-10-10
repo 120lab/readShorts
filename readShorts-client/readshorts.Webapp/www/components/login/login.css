@@ -1,0 +1,25 @@
+#login {
+	background: #cccccc url("../../img/1080_1920_shorts_image.png") no-repeat left top; 
+	background-size: cover;
+	width:100%;
+	left:0;
+	color: #000;
+}
+
+#login .pane {		
+	background-color: transparent;
+}
+
+.login-frame {
+	border-radius: 10px;
+	background-color: #fff;
+	text-align: center;
+	padding: 5%	;
+	padding top:4%;
+}
+
+#login #fb-connect {
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #2A49A5;
+}

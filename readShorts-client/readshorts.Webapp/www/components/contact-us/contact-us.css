@@ -1,0 +1,95 @@
+#contact-us #hello-image {
+	width:30%;
+	text-align: right;
+	display: inline-block;
+	height: 100%;
+	position: absolute;
+	background-image: url(../../img/hello_sign.png);
+	background-size: contain;background-repeat: no-repeat;
+}
+
+#contact-us-details-form {
+	margin-top: 20px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+#contact-us-details-form label	 {
+	margin-top: 5px;
+}
+
+#contact-us-details-form #whats-on-your-mind {
+	margin-top: 20px;
+}
+
+#contact-us-details-form #rate{
+	margin-top: 20px;
+}
+
+#contact-us-details-form #future{
+	margin-top: 20px;
+}
+
+#contact-us-details-form textarea {
+	font-weight: bold !important;
+}
+
+#rate1 {
+    height: 50px;
+ 	background-image: url(../../img/smily-01/01_unpressed.png);
+ 	background-size: contain;
+ 	background-repeat: no-repeat;
+    background-position: center;
+}
+
+#rate2 {
+    height: 50px;
+ 	background-image: url(../../img/smily-02/02_unpressed.png);
+ 	background-size: contain;
+ 	background-repeat: no-repeat;
+    background-position: center;
+}
+
+#rate3 {
+    height: 50px;
+ 	background-image: url(../../img/smily-03/03_unpressed.png);
+ 	background-size: contain;
+ 	background-repeat: no-repeat;
+    background-position: center;
+}
+
+#rate4 {
+    height: 50px;
+ 	background-image: url(../../img/smily-04/04_unpressed.png);
+ 	background-size: contain;
+ 	background-repeat: no-repeat;
+    background-position: center;
+}
+
+#rate5 {
+    height: 50px;
+ 	background-image: url(../../img/smily-05/05_unpressed.png);
+ 	background-size: contain;
+ 	background-repeat: no-repeat;
+    background-position: center;
+}
+
+.rate1_pressed {
+ 	background-image: url(../../img/smily-01/01_pressed.png) !important;
+}
+
+.rate2_pressed {
+ 	background-image: url(../../img/smily-02/02_pressed.png) !important;
+}
+
+.rate3_pressed {
+ 	background-image: url(../../img/smily-03/03_pressed.png) !important;
+}
+
+.rate4_pressed {
+ 	background-image: url(../../img/smily-04/04_pressed.png) !important;
+}
+
+.rate5_pressed {
+ 	background-image: url(../../img/smily-05/05_pressed.png) !important;
+}

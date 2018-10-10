@@ -1,0 +1,18 @@
+// override Ionic default items styling */
+
+.item {
+	border-width: 0 !important;
+}
+
+.item-input {
+	    padding: 3px 0 3px 0px !important;
+}
+
+.item-select select {
+	border: 0 !important;
+    border-bottom-width: 1px !important;
+    border-bottom-color: #ddd !important;
+    border-style: solid !important;
+    margin: 1px;
+    width: 100%;
+	}

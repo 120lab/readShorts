@@ -1,0 +1,44 @@
+#plm {
+    background-color: #333454;
+    text-align: center;
+    color: #fff;
+    margin-top: 5%;
+/*    width: 90%; */
+    padding: 5%;
+}
+
+#plm .row {
+	padding-left:8%;
+}
+
+#plm .row img {
+    width: 27.33%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#plm .title {
+	margin:10px;
+	margin-bottom: 8px;	
+	font-size: 1.6rem;
+}
+
+#plm .closeModal {
+	position:absolute;
+	right:10px;
+	top:10px;
+	font-size: 1.3rem;
+	padding: 10px 0px 20px 50px;
+	z-index:2;
+}
+
+#plm .button {
+	border-radius: 25px;
+	padding: 0 0px;
+	width:100%;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: 1.0em;
+}

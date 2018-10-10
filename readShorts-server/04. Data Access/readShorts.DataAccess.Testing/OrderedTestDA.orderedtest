@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="OrderedTestDA" storage="e:\shortsdev\readshorts.server\04. data access\readshorts.dataaccess.testing\orderedtestda.orderedtest" id="55b4f860-33e3-4c98-bd9c-d3c471c74088" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="0ef39519-9189-2c47-2756-f015c9be70e0" name="TestMethod_AddFirstDemoUser" storage="bin\debug\readshorts.server.dataaccess.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="aa3a2712-4773-8bdd-930a-0fb18d59e8c7" name="TestMethod_UpdateDemoUser" storage="bin\debug\readshorts.server.dataaccess.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="b162a210-3324-d55a-b133-c23207d5886f" name="TestMethod_GetUserByUserName" storage="bin\debug\readshorts.server.dataaccess.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="1f5d2cf7-aecd-09bc-042a-620e25ae9867" name="TestMethod_GetUsers" storage="bin\debug\readshorts.server.dataaccess.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

@@ -1,0 +1,47 @@
+/* This is the entry point for all ionic styling overides.
+   needed to customize the Shorts application.
+   all Shorts specific classes use the 'sh-' prefix.
+
+   Customized scss files are located in www/scss/ directory.
+   The files are 'compiled during ionic build process'.
+
+   Additional styling may be applied directly using css files which are 
+   located in www/css/ directory  */
+
+
+#main-menu {
+   h3,h4 {
+      text-align:center;
+      color:white;
+   }
+}
+
+#main-menu-button 
+       .button.button-clear .icon:before,  .button.button-clear.icon:before,  .button.button-clear.icon-left:before, .button.button-clear.icon-right:before,  button.button-clear .icon:before,  button.button-clear.icon:before,  button.button-clear.icon-left:before,  button.button-clear.icon-right:before {
+        font-size: 24px !important;
+        line-height: 24px !important; }
+
+/* Set the title area of the navbar to visible overflow. This allows the 'main menu' button to 'spill over' the designated navbar area. 
+    This way we can create the 'floating effect of the button' */
+.bar .title {
+  overflow: visible !important;
+    font-weight:bold !important; 
+}
+
+
+/* importing individual overides to ionic defauld SCSS files. These file are specific to the 
+   'Shorts' project and are loaded from the current project directory. It incluse only the 
+   scss elements that needs overriding. */
+
+body {
+  font-size:16px !important;
+}
+
+
+@import "_variables";
+@import "_items";
+@import "_forms";
+//@import "www/scss/_modal.scss";
+//@import "www/scss/_animations.scss";
+
+

@@ -1,0 +1,1 @@
+module.exports=function(s){s.set({basePath:"",frameworks:["jasmine"],files:["dist/*","tests/*.js"],exclude:["dist/swing.min.js"],reporters:["progress"],colors:!0,logLevel:s.LOG_INFO,autoWatch:!0,browsers:["PhantomJS"],singleRun:!1})};

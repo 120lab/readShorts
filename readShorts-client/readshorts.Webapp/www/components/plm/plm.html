@@ -1,0 +1,20 @@
+<ion-modal-view id="plm" class="modal-wrapper">
+		<div class="closeModal icon ion-close-round" ng-click="closePLM()"></div>
+
+	<ion-content has-header="false" has-footer="false" class="padding center" ng-controller="PlmCtrl">
+		<div class="padding title">PEOPLE <span style="font-weight: bold;font-style: italic;">LIKE</span> ME</div>
+		<p style="margin:5px;padding: 0 5px">Imagine a place where you can meet new friends who shares similar reading preferences like yours...</p>
+		<div class="row row-center">
+			<img src="img/plm_1.png" />
+			<img src="img/plm_2.png" />
+			<img src="img/plm_3.png" />
+		</div>
+		<div class="row row-center">
+			<img src="img/plm_4.png" />
+			<img src="img/plm_5.png" />
+			<img src="img/plm_6.png" />
+		</div>
+		<p style="font-style: italic;padding: 0 5px">Invite Your Friends to Join Shorts & Become One of The First to Enjoy This Amazing Feature when Launched!</p>
+		<button class="button button-block" ng-click="inviteFriendsUsingEmail()"><b>INVITE FRIENDS</b></button>
+	</ion-content>
+</ion-modal-view>

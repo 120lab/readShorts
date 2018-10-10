@@ -1,0 +1,76 @@
+<ion-view id="personal-Info" view-title="Profile Info">
+
+	<ion-nav-bar class="bar-light">
+		<ion-nav-back-button class="button-clear">
+			<i class="icon ion-chevron-left"></i>
+		</ion-nav-back-button>
+	</ion-nav-bar>
+
+    <ion-nav-buttons side="right">
+      <button class="button button-clear" ng-click="editForm()" ng-show="!formActive">
+        Edit
+      </button>
+    </ion-nav-buttons>
+
+	<ion-pane background-image="'img/pexels-photo.png'" style="background-position-x: 50% ">
+		<div class="personal-details" ng-show="!formActive">
+			<div class="list centered">
+				<label class="item item-input">
+					<span class="input-label">Name</span>
+					<span type="text" ng-model="form.username" style="font-weight: bold">{{personalDetails.FirstName}} {{personalDetails.LastName}}</span>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">User Name</span>
+					<span type="text" ng-model="form.username" style="font-weight: bold">{{personalDetails.UserName}}</span>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Birthday</span>
+					<span type="text" ng-model="form.birthday" style="font-weight: bold">{{personalDetails.StrBirthDate}}</span>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Gender</span>
+					<span type="text" ng-model="form.gender" style="font-weight: bold">{{personalDetails.LUGenderName}}</span>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Languages</span>
+					<span type="text" ng-model="form.languages" style="font-weight: bold">{{personalDetails.LUSysInterfacelanguageName}}</span>
+				</label>				
+				<label class="item item-input">
+					<span class="input-label">Location</span>
+					<span type="text" ng-model="form.location" style="font-weight: bold">{{personalDetails.LUCountryName}}</span>
+				</label>
+			</div>
+		</div>
+
+		<div class="personal-details-form" ng-show="formActive">
+			<div class="list centered">
+				<label class="item item-input">
+					<span class="input-label">First name</span>
+					<input type="text" ng-model="personalDetails.FirstName">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Last name</span>
+					<input type="text" ng-model="personalDetails.LastName">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Birthday</span>
+					<input type="date" ng-model="personalDetails.BirthDate">
+				</label>
+				<label class="item item-input item-select">
+					<span class="input-label">Gender</span>
+					<select ng-model="personalDetails.LUGenderKey" ng-options="gender.RecordKey  as gender.Description for gender in genderLookupTable"></select>
+				</label>
+				<label class="item item-input item-select">
+					<span class="input-label">Languages</span>
+					<select ng-model="personalDetails.LUSysInterfacelanguageKey" ng-options="language.RecordKey  as language.Description for language in languageLookupTable"></select>
+				</label>				
+				<label class="item item-input item-select">
+					<span class="input-label">Location</span>
+					<select ng-model="personalDetails.LUCountryKey" ng-options="country.RecordKey  as country.Description for country in countryLookupTable"></select>
+				</label>
+				<button class="button button-clear button-assertive" ng-click="saveForm()">Save</button>
+				<button class="button button-clear button-stable" ng-click="formActive=!formActive">Cancel</button>
+			</div>
+		</div>
+	</ion-pane>
+</ion-view>

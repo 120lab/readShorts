@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{788086B7-2A95-4E42-BFBD-3A5A0753897F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>readShorts.Models</RootNamespace>
+    <AssemblyName>readShorts.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\CreateAuditCommand.cs" />
+    <Compile Include="Commands\CreateLookupCommand.cs" />
+    <Compile Include="Commands\CreateShortTagCommand.cs" />
+    <Compile Include="Commands\CreateUserAccountPointCommand.cs" />
+    <Compile Include="Commands\CreateShortCommand.cs" />
+    <Compile Include="Commands\DeleteShortsCommand.cs" />
+    <Compile Include="Commands\GeneralTasksCommand.cs" />
+    <Compile Include="Commands\MatchShortUserAccountCommand.cs" />
+    <Compile Include="Commands\CreateUserCommand.cs" />
+    <Compile Include="Commands\DeleteUsersCommand.cs" />
+    <Compile Include="Commands\CreateShortUserAccountCommand.cs" />
+    <Compile Include="Commands\UpdateShortUserAccountCommand.cs" />
+    <Compile Include="Commands\UpdateShortsCommand.cs" />
+    <Compile Include="Commands\UpdateUsersCommand.cs" />
+    <Compile Include="CQRS\ChangeTaskStatusCommand.cs" />
+    <Compile Include="CQRS\IEntity.cs" />
+    <Compile Include="CQRS\IRepository.cs" />
+    <Compile Include="CQRS\Task.cs" />
+    <Compile Include="CQRS\TasksByStatusQuery.cs" />
+    <Compile Include="CQRS\TasksByStatusQueryResult.cs" />
+    <Compile Include="dbo\Ad.cs" />
+    <Compile Include="dbo\Audit.cs" />
+    <Compile Include="dbo\DboBase.cs" />
+    <Compile Include="dbo\EventUserAccount.cs" />
+    <Compile Include="CQRS\MessageMatchShortUserAccount.cs" />
+    <Compile Include="dbo\CustomerMessage.cs" />
+    <Compile Include="dbo\UserAccountActivity.cs" />
+    <Compile Include="dbo\UserAccountConnection.cs" />
+    <Compile Include="dbo\UserAccountGroup.cs" />
+    <Compile Include="dbo\UserAccountPoint.cs" />
+    <Compile Include="dbo\ShortUserAccount.cs" />
+    <Compile Include="dbo\ShortTag.cs" />
+    <Compile Include="dbo\Short.cs" />
+    <Compile Include="dbo\UserAccount.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="General\ChartData.cs" />
+    <Compile Include="General\PublicChart.cs" />
+    <Compile Include="LOOKUP\LUActivity.cs" />
+    <Compile Include="LOOKUP\LUCountry.cs" />
+    <Compile Include="LOOKUP\LUEventType.cs" />
+    <Compile Include="LOOKUP\LUGender.cs" />
+    <Compile Include="LOOKUP\LUGroup.cs" />
+    <Compile Include="LOOKUP\LUPointType.cs" />
+    <Compile Include="LOOKUP\LUStoryType.cs" />
+    <Compile Include="LOOKUP\LUShortAgeRestriction.cs" />
+    <Compile Include="LOOKUP\LUShortCategoryType.cs" />
+    <Compile Include="LOOKUP\LUShortReportType.cs" />
+    <Compile Include="LOOKUP\LUShortShareType.cs" />
+    <Compile Include="LOOKUP\LUShortTagType.cs" />
+    <Compile Include="LOOKUP\LUSubscriptionType.cs" />
+    <Compile Include="LOOKUP\LUUserVerificationType.cs" />
+    <Compile Include="LOOKUP\LUSysInterfaceLanguage.cs" />
+    <Compile Include="LOOKUP\LUQuoteType.cs" />
+    <Compile Include="ModelBase.cs" />
+    <Compile Include="LOOKUP\LookupBase.cs" />
+    <Compile Include="General\Message.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\ShortQuery.cs" />
+    <Compile Include="Commands\EventUserAccountCommand.cs" />
+    <Compile Include="Queries\EventUserAccountQuery.cs" />
+    <Compile Include="Queries\TasksByStatusQuery.cs" />
+    <Compile Include="Queries\TasksByStatusQueryResult.cs" />
+    <Compile Include="Queries\LookupQuery.cs" />
+    <Compile Include="Queries\ShortUserAccountQuery.cs" />
+    <Compile Include="Queries\GeneralTasksQuery.cs" />
+    <Compile Include="Queries\UserQuery.cs" />
+    <Compile Include="ViewModels\AuditViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\LookupViewModel.cs" />
+    <Compile Include="ViewModels\EventUserAccountViewModel.cs" />
+    <Compile Include="ViewModels\ShortTagViewModel.cs" />
+    <Compile Include="ViewModels\UserAccountPointViewModel.cs" />
+    <Compile Include="ViewModels\MessageMatchShortUserAccountViewModel.cs" />
+    <Compile Include="ViewModels\ShortViewModel.cs" />
+    <Compile Include="ViewModels\ShortUserAccountViewModel.cs" />
+    <Compile Include="ViewModels\AdViewModel.cs" />
+    <Compile Include="ViewModels\GeneralTasksViewModel.cs" />
+    <Compile Include="ViewModels\CustomerMessageViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\06. Framework\Framework.Core.Interfaces\Framework.Core.Interfaces.csproj">
+      <Project>{8781027b-87f5-4ca6-9a7e-f90fb1fec936}</Project>
+      <Name>Framework.Core.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

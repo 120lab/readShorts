@@ -1,0 +1,12 @@
+{
+  "name": "shorts-mobile",
+  "app_id": "c0780b8b",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

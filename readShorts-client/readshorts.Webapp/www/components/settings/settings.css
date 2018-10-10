@@ -1,0 +1,76 @@
+#text-size-container {
+    margin: 15px;
+    margin-bottom: 25px;
+    line-height: 2.5em;
+	}
+
+.text-size {
+    margin: 0 22px;
+    font-weight: bold;
+    color: #bbb;
+    display: inline-block;
+}
+
+.text-size-selected {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+#email-settings > div {
+	margin: 15px;	
+}
+
+#email-settings > div >div {
+	margin-top: 25px;	
+}
+
+#email-settings input[type="checkbox"] {
+    display:none;
+}
+#email-settings input[type="checkbox"] + label {
+    color: black;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+#email-settings input[type="checkbox"] + label span {
+    display:inline-block;
+    width:36px;
+    height:36px;
+    margin:-1px 10px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+}
+
+#email-settings input[type="checkbox"] + label span {
+     background-color: #ccc;
+     background-image: url("../../img/follow_ic.png");
+     background-size: cover;
+}
+
+#email-settings input[type="checkbox"]:checked + label span{
+     background-image: url("../../img/following_icon.png");
+     background-size: cover;
+}
+
+#email-settings .email-setting-header {
+	display:inline-block;
+	vertical-align: middle;
+	color: #000;
+	font-size: 1.1em;
+}
+
+#email-settings .email-setting-subheader {
+	color: #aaa;
+	font-size: 0.8em;
+}
+
+#settings #save-button{
+	font-weight: bold;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    font-size: 1.2em;
+}

@@ -1,0 +1,51 @@
+<ion-view id="settings" view-title="SETTINGS">
+
+	<ion-nav-bar class="bar-light">
+		<ion-nav-back-button class="button-clear">
+			<i class="icon ion-chevron-left"></i>
+		</ion-nav-back-button>
+	</ion-nav-bar>
+
+	<!--ion-pane class="center" -->
+		<ion-content has-header="true" has-footer="false" class="padding center" >
+			<div id="text-size-container">
+				<div style="font-weight: bold">TEXT SIZE</div>
+				<div style="margin-top:10px">
+					<span style="font-size:1.1em" class="text-size" ng-click="setFontSize('small')" ng-class="{'text-size-selected':getFontSize()=='small'}"> A </span>
+					<span style="font-size:1.8em" class="text-size" ng-click="setFontSize('medium')" ng-class="{'text-size-selected':getFontSize()=='medium'}"> A </span>
+					<span style="font-size:2.5em" class="text-size" ng-click="setFontSize('large')" ng-class="{'text-size-selected':getFontSize()=='large'}"> A </span>
+				</div>
+			</div>
+
+			<div id="email-settings">
+				<div style="font-weight: bold">EMAIL settings</div>
+					<div>
+						<input type="checkbox" id="radio1" name="email-settings-select" ng-model="personalDetails.EmailForShortIMightLike"/>
+						<label for="radio1"><span></span><div class="email-setting-header">Shorts I might like<div class="email-setting-subheader">Weekdays at 5PM</div></div></label>
+					</div>
+					<div>
+						<input type="checkbox" id="radio2" name="email-settings-select" ng-model="personalDetails.EmailForShortOfTheWeek"/>
+						<label for="radio2"><span></span><div class="email-setting-header">Best Shorts of The Week<div class="email-setting-subheader">Every friday at 5PM</div></div></label>
+					</div>
+					<div>
+						<input type="checkbox" id="radio3" name="email-settings-select" ng-model="personalDetails.EmailForShortFollowingWriter"/>
+						<label for="radio3"><span></span><div class="email-setting-header">Following Writers' Shorts<div class="email-setting-subheader">Each day at 9PM</div></div></label>
+					</div>
+					<div>
+						<input type="checkbox" id="radio4" name="email-settings-select" ng-model="personalDetails.EmailForNewSAndUpdates"/>
+						<label for="radio4"><span></span><div class="email-setting-header">Shorts News and Updates<div class="email-setting-subheader">We promise not to nag</div></div></label>
+					</div>
+
+			</div>
+
+			<!--div style="font-weight: bold">CATEGORIES PREFERENCES</div>	
+
+			<div style="font-weight: bold">SOCIAL CONNECTIONS</div-->	
+
+			<div style="font-weight: bold;margin:40px 0px 10px 15px;">WHAT ELSE WOULD YOU LIKE TO SEE HERE?</div>	
+			<a style="color:#e22b49;;font-size: 1em;margin:15px" ui-sref="contact-us">Contact Us</a>
+			<button id="save-button" class="button button-clear button-assertive button-large" ng-click="saveSettings()" >Save</button>
+		</ion-content>
+	<!--/ion-pane-->	
+
+</ion-view>

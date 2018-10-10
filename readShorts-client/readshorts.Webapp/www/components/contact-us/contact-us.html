@@ -1,0 +1,74 @@
+<ion-view id="contact-us" view-title="CONTACT	 US">
+
+	<ion-nav-bar class="bar-light">
+		<ion-nav-back-button class="button-clear">
+			<i class="icon ion-chevron-left"></i>
+		</ion-nav-back-button>
+	</ion-nav-bar>
+
+	<ion-content has-header="true" has-footer="false" class="padding center" >
+		<div style="position	: relative">
+			<span style="width:65%;display: inline-block;font-size: 1.2em;line-height: 1.6em;font-weight: bold;font-family: Domine;padding: 4% 10% 2% 5%">
+				We'd love to hear from you.<br>Drop a message and we'll get back to you
+			</span>
+			<div id="hello-image" >
+				<!--img src="../../img/hello_sign.png" height="100%"-->
+			</div>
+		</div>
+
+		<div id="contact-us-details-form" >
+			<div class="list centered">
+				<label class="item item-input">
+					<span class="input-label">Name</span>
+					<input type="text" ng-model="contactDetails.name">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Subject</span>
+					<input type="text" ng-model="contactDetails.subject"	>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Email</span>
+					<input type="email" ng-model="contactDetails.email">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Phone</span>
+					<input type="email" ng-model="contactDetails.phone">
+				</label>
+
+
+				<div id="whats-on-your-mind">
+					<label class="item item-input item-stacked-label" >
+						<span class="input-label">What's on your mind?</span>
+						<textarea rows="2" type="text" style="width:100%" ng-model="contactDetails.onMyMind"></textarea>
+					</label>
+
+				</div>
+
+				<div id="rate">
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Rate your experience of Shorts</span>
+						<div class="row">
+						<!-- TODO: Provide a cleaner implementation using custom Radio directive -->
+						  <div class="col" id="rate1" ng-class="{'rate1_pressed':itemPressedIndex==1}" on-tap="rate(1)"></div>
+						  <div class="col" id="rate2" ng-class="{'rate2_pressed':itemPressedIndex==2}" on-tap="rate(2)"></div>
+						  <div class="col" id="rate3" ng-class="{'rate3_pressed':itemPressedIndex==3}" on-tap="rate(3)"></div>
+						  <div class="col" id="rate4" ng-class="{'rate4_pressed':itemPressedIndex==4}" on-tap="rate(4)"></div>
+						  <div class="col" id="rate5" ng-class="{'rate5_pressed':itemPressedIndex==5}" on-tap="rate(5)"></div>
+						</div>
+					</label>
+				</div>
+
+				<div id="future">
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">What would you like to see in our future development?</span>
+						<input type="text" ng-model="contactDetails.future">
+					</label>
+				</div>
+				<div style="text-align: center">
+					<button id="save-button" class="button button-clear button-assertive button-large" style="font-weight: bold" ng-click="saveSettings()" >Send</button>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+
+</ion-view>

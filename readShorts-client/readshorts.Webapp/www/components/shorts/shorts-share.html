@@ -1,0 +1,60 @@
+<ion-modal-view style="" class="modal-wrapper">
+	<ion-content full-height-modal has-header="false" has-footer="false" class="padding center" style="background-color: #fff">
+		<div  id="shorts-share-container" style="top:0 !important">
+			<button style="left:45%;color: #5d5d5d;	" class="button button-small button-clear button-light icon ion-close-round"></button>
+			<div id="share-title">Share Short</div>
+			
+			<!-- Place here facebook, twiter, and linkedin share toggle buttons -->
+			<div id="social-buttons" class="row">
+			 	<div class="col">
+					<button class="button button-small button-clear button-light icon ion-social-facebook share-dest" ng-class="{'share-dest-active':shareToFacebook, 'share-dest-inactive': !shareToFacebook}" ></button>
+				</div>
+			 	<div class="col">
+					<button class="button button-small button-clear button-light icon ion-social-twitter share-dest" 
+							ng-class="{'share-dest-active':shareToTwitter, 'share-dest-inactive': !shareToTwitter}"
+							></button>
+				</div>
+			 	<div class="col">
+					<button class="button button-small button-clear button-light icon share-dest" 
+					ng-class="{'share-dest-active':shareToLinkedin, 'share-dest-inactive': !shareToLinkedin}"
+					ng-click="toggleLinkedinShare()">in</button>
+				</div>
+			 	<div class="col">
+					<button class="button button-small button-clear button-light icon ion-social-pinterest share-dest" 
+					ng-class="{'share-dest-active':shareToPinterest, 'share-dest-inactive': !shareToPinterest}"
+					ng-click="togglePinterestShare()"></button>
+				</div>
+			</div>
+
+			<label class="item item-input">
+				<textarea rows="5" ng-model="shortShareText" ng-focus="shareTextFocus()"  ng-blur="shareTextBlur()"></textarea>
+			</label>
+
+			<button id="share-button" class="button  button-assertive" >SHARE</button>
+
+			<hr>
+
+			<div id="direct-share" style="font-size:1rem;position: relative;">
+				<div style="float:left;text-align: left;">Share via:</div>
+				<div style="float:right;display: inline-block; color:red"> 
+					<span 
+						class="button button-small button-icon assertive icon ion-email">
+					</span>
+					<a 	class="button button-small button-icon assertive icon ion-social-whatsapp-outline"
+						socialshare
+						socialshare-provider="whatsapp"
+						socialshare-text="{{shortShareText}}"
+						socialshare-url="{{shortShareUrl}}">
+					</a>
+					<a ng-click="shortDownload()" 
+						class="button button-small button-icon assertive icon ion-android-download">
+					</a>
+				</div>
+			</div>
+
+			<!--button id="download-quote" class="button button-block button-light icon ion-android-download" ng-click="shortDownload()"> Download
+			</button -->
+		</div>
+	</ion-content>
+
+</ion-modal-view>

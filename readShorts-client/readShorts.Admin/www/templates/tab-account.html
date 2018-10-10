@@ -1,0 +1,109 @@
+<ion-view view-title="Short">
+  <ion-content>
+    <form ng-submit="createShort()" />
+    <div class="list">
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Writer Key</span>
+        <input type="text" placeholder="Writer Key" ng-model="short.WriterUserKey"/>
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Writer Email</span>
+        <input type="text" placeholder="david@readshorts.com" ng-model="short.WritersEmail"/>
+      </label>
+
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Title</span>
+            <input type="text" placeholder="Be happy" dir="rtl" ng-model="short.Title"/>
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Text</span>
+      <textarea placeholder="All text layout" rows="15" dir="rtl" ng-model="short.Text"></textarea>
+      </label>
+   
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Quote</span>
+        <textarea placeholder="To be or not to be"  dir="rtl" ng-model="short.Quote"></textarea>
+      </label>
+    
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Quote type
+        </div>
+        <select ng-model="short.LUQuoteTypeKey">
+          <option value="1" ng-selected="true">First Paragraph</option>
+          <option value="2" >Part of the story</option>
+          <option value="3">The entire story</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Age restriction
+        </div>
+        <select ng-model="short.LUShortAgeRestrictionKeyAge">
+          <option value="1" ng-selected="true">All stories (16+)</option>
+          <option value="2">Adult content (18+)</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Language
+        </div>
+        <select  ng-model="short.LUSysInterfacelanguageKey">
+          <option value="1">English</option>
+          <option value="2" ng-selected="true">עברית</option>
+        </select>
+      </label>
+
+
+     <label class="item item-input item-select">
+        <div class="input-label">
+          Story type
+        </div>
+        <select  ng-model="short.LUStoryTypeKey">
+          <option value="1">Poems</option>
+          <option value="2">Shorts</option>
+          <option  value="3" ng-selected="true">Micro shorts</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Multi tags seperated by comma</span>
+        <input type="text" placeholder="Tag1,Tag2,Tag3" ng-model="short.Tags"/>
+      </label>
+
+      <label class="item item-input item-select">
+        <span class="input-label">Category</span>
+            <select  ng-model="catselected" ng-change="categoryChanged(catselected)"> 
+          <option value="Lifes Just Happened"  ng-selected="true">Life's Just Happened</option>
+          <option value="Moments of Memories">Moments of Memories</option>
+          <option  value="In Equivilant World">In Equivilant World</option>
+          <option  value="Small Letters">Small Letters</option>
+          <option  value="Mini Dialouges">Mini Dialouges</option>
+          <option  value="Self Reflections">Self Reflections</option>
+          <option  value="Real people Fake Stories">Real people Fake Stories</option>
+        </select>
+      </label>
+
+      <label class="item item-input  item-stacked-label">
+         <span class="input-label">Other Category</span>
+        <input type="text" placeholder="other category" ng-model="short.CategoryType"/>
+      </label>
+      
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Picture url</span>
+        <input type="text" placeholder="Picture background url" ng-model="short.CategoryPicturePath"/>
+      </label>
+
+      <div class="padding">
+        <button type="submit" ng-disabled="InProcess" class="button button-block button-positive">Create short</button>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

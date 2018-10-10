@@ -1,0 +1,16 @@
+#personal-Info {
+	color: black;
+}
+
+#personal-Info  .personal-details, .personal-details-form  {
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+}
+
+#personal-Info .button {
+	float:right;
+}

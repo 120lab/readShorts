@@ -1,0 +1,41 @@
+ <ion-modal-view id="login"  class="modal-wrapper">
+
+	<ion-content has-header="false" has-footer="false" class="padding center" >
+		<div class="login-frame padding"> 
+			<button style="left:45%" class="button button-small button-clear button-light icon ion-close-round" ng-click="close()"></button>
+
+			<h3 style="margin-top:0"> Sign In </h3>
+			<div class="row"> Only Registered Readers can Save Shorts for Future Reading in Their Bookmarks's feed. </div>
+
+			<!-- Facebook registration -->
+			<button id="fb-connect" class="button button-positive button-block icon ion-social-facebook" ng-click="facbookLogin()">&nbsp&nbsp Login with Facebook</button>
+
+			<div class="padding">OR</div>
+
+			<!-- email registration -->
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input type="email" placeholder="Enter Your Email" ng-model="emailAddress">
+				</label>
+				<button class="button button-small" ng-click="emailLogin(emailAddress)">
+					Send
+				</button>
+			</div>
+
+			<p style="color:green;font-weight: bold">{{status}}</p>
+			<div class="">
+			<b>By Signing Up, you will be part of Shorts' community, shich enjoys:</b>	
+				<div style="display: inline-block;text-align: left;margin: 10px">
+					<ul>
+						<li class="icon ion-checkmark-round"> Personal Matches of Shorts</li>
+						<li class="icon ion-checkmark-round"> Personal Feeds</li>
+						<li class="icon ion-checkmark-round"> Following Favorites Writers</li>
+					</ul>
+					<span><b style="display:block;margin: 0 auto;text-align: center">And much more..</b></span>
+				</div>
+
+			</div>
+		</div>
+
+	</ion-content>
+</ion-modal-view>

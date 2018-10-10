@@ -1,0 +1,78 @@
+.about-top {
+	margin:0 auto;
+	background-color: #e22b49;
+	height:30px;
+	border-top-left-radius:50%;
+	border-top-right-radius:50%;
+	width:100%; 
+}
+
+	#about-shorts #shorts-icon {
+		position: relative;
+		width: 60px;
+		height:60px;
+		background: transparent url("../../img/shorts-logo.png") no-repeat left top;
+		background-size: cover;
+	/*	top: 24%; */
+		left: 50%;
+  		transform: translateX(-50%);
+  		-webkit-transform: translateX(-50%);
+  		margin:20px 0px;
+	}
+
+	#about-shorts #about-text {
+	    text-align: center;
+	    width: 60%;
+	    left: 20%;
+	    position: relative;
+	    line-height: 1.8em;
+	    margin-bottom: 20px;
+	    font-family: 'Domine';
+	}
+
+	#about-shorts #about-details {
+		background-color: #e22b49;
+	    text-align: center;
+	    line-height: 1.8em;
+	}
+
+	#about-shorts #about-text-details {
+	    text-align: center;
+	    width: 60%;
+	    left: 20%;
+	    position: relative;
+	    font-size: 0.9em;
+	    line-height: 1.5em;
+	    margin-bottom: 50px;
+	    color:#fff;
+
+	}
+
+	#about-shorts .social-icons>a>.icon {
+		color:#fff;
+		margin: 0px 12px;
+		font-size: 1.6em;
+	}
+
+	#about-shorts .social-icons {
+		margin: 20px 0px;
+	}
+
+	#about-shorts #copyright{
+		padding:30px 0px;
+		background-color: #b21e36;
+		color:#fff;
+		font-size: 0.8em;
+	}
+
+	#about-shorts #shorts-logo {
+		position: relative;
+		color:#fff;
+		font-family: Lobster;
+		font-size: 2em;
+		top: 36%;
+		left: 50%;
+		padding: 20px 0px;
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+  	}

@@ -1,0 +1,110 @@
+  <ion-modal-view style=";" class="modal-wrapper">
+	<button id="main-menu-button" class="icon ion-close backButtonForAndroid" ng-click="closeMainMenuModal()" style="position: relative;background-color:#e22b49 ">
+
+	</button>
+	<div full-height-modal top="0" id="main-menu-container">
+		<ion-content overflow-scroll="false" has-bouncing="false" scrollbar-y="false">		
+			<div class="sh-menu-top"> </div>
+			<div id="short-main-menu">
+				<div >
+			    	<h3>{{getGreeting()}}</h3>
+			    	<h4 ng-show="isUserLoggedIn()">{{getUserName()}}</h4>
+			    	<h4 ng-hide="isUserLoggedIn()" ng-click="closeMainMenuAndLogin()">Login</h4>
+
+					<div class="row">
+				    	<div class="sh-center">
+					    	<div class="row row-center" ng-click="shortTypeSelected({feedType: 'shorts'})">
+					    		<button class="round-icon icon ion-heart" style="background-color:#e22b49;"></button>
+					    		<button class="button button-clear button-light sh-text-bold">Home Feed</button>
+					    	</div>
+					    	<div class="row row-center" ng-click="shortTypeSelected({feedType: 'bookmarks'})">
+					    		<button class="round-icon icon ion-bookmark" style="background-color:#91b1f0"></button>
+					    		<button class="button button-clear button-light sh-text-bold">My Bookmarks</button>
+					    	 </div>
+					    	<div class="row row-center" ng-click="shortTypeSelected({feedType: 'followedShorts'})">
+					    		<button class="round-icon icon ion-android-done" style="background-color:#13a6bc"></button>
+					    		<button class="button button-clear button-light sh-text-bold">My Followed Writers</button>
+					    	 </div>
+					    	<div class="row row-center" ng-click="shortTypeSelected({feedType: 'topShorts'})">
+					    		<button class="round-icon icon ion-star" style="background-color:#6a12d6"></button>
+					    		<button  class="button button button-clear button-light sh-text-bold">Top 25 Shorts Today</button>
+					    	 </div>
+					    	<div class="row row-center" ng-click="shortTypeSelected({feedType: 'favorites'})">
+					    		<button class="round-icon icon ion-thumbsup" style="background-color:#9712d5"></button>
+								<button class="button button-clear button-light sh-text-bold">My Favorites</button>
+					    	 </div>
+					    	<div class="row row-center" ng-click="shortTypeSelected({feedType: 'shared'})">
+					    		<button class="round-icon icon ion-android-share-alt" style="background-color:#d13899"></button>
+								<button class="button button-clear button-light sh-text-bold">My Friends' shares</button>
+					    	 </div>
+						</div>
+					</div>
+
+					<p class="separator"><span class="icon ion-person"></span></p>
+
+					<div class="text-center">
+						<row>
+							<button class="col col-50 col-offset-25 button button-clear button-light" ui-sref="personal-info">
+								My Profile
+							</button> 
+						</row>
+						<row>
+							<button class="col col-50 col-offset-25 button button-clear button-light" ng-click="openPLM()">
+								People Like Me
+							</button> 
+						</row>
+						<row>
+							<button class="col col-50 col-offset-25 button button-clear button-light" ui-sref="settings">
+								Settings
+							</button>
+						</row>
+						<row>
+							<button class="col col-50 col-offset-25 button button-clear button-light" ng-click="logout()" ng-show="isUserLoggedIn()">
+								Logout
+							</button>
+						</row>
+					</div>
+
+					<p class="separator"><span class="icon ion-information-circled"></span></p>
+
+
+					<div class="text-center">
+						<row>
+							<button class="col col-50 col-offset-25 button button-clear button-light" ui-sref="about">
+								About Shorts
+							</button> 
+						</row>
+						<row>
+							<button class="col col-50 col-offset-25 button button-clear button-light" ng-click="publishShort()">
+								Publish Your Shorts
+							</button> 
+						</row>
+						<row>
+							<button class="col col-50 col-offset-25 button button-clear button-light" ui-sref="contact-us">
+								Contact Us
+							</button>
+						</row>	
+						<row>
+							<button class="col col-50 col-offset-25 button button-clear button-light" ui-sref="terms">
+								Terms
+							</button>
+						</row>	
+					</div>
+
+					<div class="text-center" style="margin: 10px 0;">
+						<button class="button button-clear button-small button-light" ng-click="gotoSocial('twitter')">
+						  <i class="icon ion-social-twitter"></i>
+						</button>
+						<button class="button button-clear button-small button-light" ng-click="gotoSocial('facebook')">
+						  <i class="icon ion-social-facebook"></i>
+						</button>
+						<button class="button button-clear button-small button-light" ng-click="gotoSocial('instagram')">
+						  <i class="icon ion-social-instagram"></i>
+						</button>
+					</div>
+
+				</div>
+			</div>
+		</ion-content>
+	</div>	
+  </ion-modal-view>

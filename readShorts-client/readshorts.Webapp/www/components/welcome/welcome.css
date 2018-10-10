@@ -1,0 +1,84 @@
+#welcome {
+	background: #cccccc url("../../img/1080_1920_shorts_image.png") no-repeat left top;
+	background-size: cover;
+	color: #fff;
+}
+
+	#welcome .scroll {
+	  width: 100% !important;
+	  height: 100% !important;
+	}
+
+
+	#welcome #shorts-icon {
+		position: absolute;
+		width: 80px;
+		height:80px;
+		background: transparent url("../../img/shorts-logo.png") no-repeat left top;
+		background-size: cover;
+		top: 18%;
+		left: 50%;
+  		transform: translateX(-50%);
+  		-webkit-transform: translateX(-50%);
+	}
+
+	#welcome #shorts-logo {
+		position: absolute;
+		font-family: Lobster;
+		font-size: 70px;
+		top: 36%;
+		left: 50%;
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		text-shadow: 0px 2px 0px rgba(0,0,0,0.4);
+  	}
+
+	#welcome #shorts-slogan {
+		position: absolute;
+		font-style: italic;
+		font-size: 18px;
+		top: 44%;
+		left: 50%;
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+  	}
+
+	#welcome #shorts-start-reading {
+		position: absolute;
+		font-size: 22px;
+		top: 56%;
+		left: 50%;
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		width:50%;
+	}
+
+	#welcome #shorts-start-reading .button {
+		border-radius: 20px;
+		padding: 0 0px;
+		width:100%;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
+
+	#welcome #shorts-intro {
+		position: absolute;
+		top: 76%;
+		left: 50%;
+		width:80%;
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+	}
+
+
+	#welcome .pane {
+		background-color: transparent;
+		position: absolute;
+	}
+
+	#welcome #login-btn {
+		    text-shadow: #fff 2px 2px 2px, #fff -2px -2px 2px, #fff 2px -2px 2px, #fff -2px 2px 2px;
+		    font-weight: bold;
+	}
+	}

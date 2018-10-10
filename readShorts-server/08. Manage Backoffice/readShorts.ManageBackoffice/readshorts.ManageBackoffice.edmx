@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="readShorts_DB_DEVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ad">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Interval" Type="int" Nullable="false" />
+          <Property Name="AdPath" Type="nvarchar" MaxLength="2000" />
+          <Property Name="AdBody" Type="nvarchar" MaxLength="3000" />
+          <Property Name="LUShortAgeRestrictionKey" Type="bigint" />
+          <Property Name="LUSysInterfacelanguageKey" Type="bigint" />
+          <Property Name="LUCountryKey" Type="bigint" />
+          <Property Name="CreatedTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="IsRowDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserKey" Type="int" Nullable="false" />
+          <Property Name="LastUpdateUserKey" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Short">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PicturePath" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Quote" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Text" Type="nvarchar" MaxLength="3000" />
+          <Property Name="FooterText" Type="nvarchar" MaxLength="200" />
+          <Property Name="FooterLink" Type="nvarchar" MaxLength="200" />
+          <Property Name="ERT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CreatedTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="CreatedUserKey" Type="int" Nullable="false" />
+          <Property Name="LastUpdateTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateUserKey" Type="int" Nullable="false" />
+          <Property Name="IsRowDeleted" Type="bit" Nullable="false" />
+          <Property Name="LUShortAgeRestrictionKey" Type="bigint" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="VideoPath" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Embed" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IsPublic" Type="bit" Nullable="false" />
+          <Property Name="IsDraft" Type="bit" Nullable="false" />
+          <Property Name="WriterUserKey" Type="bigint" Nullable="false" />
+          <Property Name="LUSysInterfacelanguageKey" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShortChannel">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShortKey" Type="bigint" Nullable="false" />
+          <Property Name="CreatedTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="CreatedUserKey" Type="int" Nullable="false" />
+          <Property Name="LastUpdateTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateUserKey" Type="int" Nullable="false" />
+          <Property Name="IsRowDeleted" Type="bit" Nullable="false" />
+          <Property Name="LUShortChannelTypeKey" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShortTag">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShortKey" Type="bigint" Nullable="false" />
+          <Property Name="CreatedTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="CreatedUserKey" Type="int" Nullable="false" />
+          <Property Name="LastUpdateTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateUserKey" Type="int" Nullable="false" />
+          <Property Name="IsRowDeleted" Type="bit" Nullable="false" />
+          <Property Name="LUShortTagTypeKey" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserSecurityNumber" Type="nvarchar" MaxLength="36" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HashedPassword" Type="nvarchar" MaxLength="100" />
+          <Property Name="ClientIP" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="MobileSerialNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastActitiyDate" Type="datetime" Nullable="false" />
+          <Property Name="IsAnonimousConnect" Type="bit" Nullable="false" />
+          <Property Name="IsFBConnect" Type="bit" Nullable="false" />
+          <Property Name="IsTWConnect" Type="bit" Nullable="false" />
+          <Property Name="IsGGLConnect" Type="bit" Nullable="false" />
+          <Property Name="IsEmailConnect" Type="bit" Nullable="false" />
+          <Property Name="CreatedTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="CreatedUserKey" Type="int" Nullable="false" />
+          <Property Name="LastUpdateTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateUserKey" Type="int" Nullable="false" />
+          <Property Name="IsRowDeleted" Type="bit" Nullable="false" />
+          <Property Name="LUSubscriptionTypeKey" Type="bigint" Nullable="false" />
+          <Property Name="ShortBio" Type="nvarchar" MaxLength="100" />
+          <Property Name="LUSysInterfacelanguageKey" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LUActivity">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUCountry">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUEventType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUGender">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUGroup">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUPointType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUShortAgeRestriction">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUShortChannelType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUShortReportType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUShortShareType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUShortTagType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUSubscriptionType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUSysInterfaceLanguage">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LUUserStatus">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecordKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description_Herew" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="readShorts_DB_DEVModelStoreContainer">
+          <EntitySet Name="Ad" EntityType="Self.Ad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Short" EntityType="Self.Short" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShortChannel" EntityType="Self.ShortChannel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShortTag" EntityType="Self.ShortTag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LUActivity" EntityType="Self.LUActivity" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUCountry" EntityType="Self.LUCountry" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUEventType" EntityType="Self.LUEventType" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUGender" EntityType="Self.LUGender" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUGroup" EntityType="Self.LUGroup" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUPointType" EntityType="Self.LUPointType" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUShortAgeRestriction" EntityType="Self.LUShortAgeRestriction" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUShortChannelType" EntityType="Self.LUShortChannelType" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUShortReportType" EntityType="Self.LUShortReportType" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUShortShareType" EntityType="Self.LUShortShareType" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUShortTagType" EntityType="Self.LUShortTagType" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUSubscriptionType" EntityType="Self.LUSubscriptionType" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUSysInterfaceLanguage" EntityType="Self.LUSysInterfaceLanguage" Schema="LOOKUP" store:Type="Tables" />
+          <EntitySet Name="LUUserStatus" EntityType="Self.LUUserStatus" Schema="LOOKUP" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="readShorts_DB_DEVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ad">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Interval" Type="Int32" Nullable="false" />
+          <Property Name="AdPath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="AdBody" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="LUShortAgeRestrictionKey" Type="Int64" />
+          <Property Name="LUSysInterfacelanguageKey" Type="Int64" />
+          <Property Name="LUCountryKey" Type="Int64" />
+          <Property Name="CreatedTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsRowDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserKey" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateUserKey" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Short">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PicturePath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Quote" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="FooterText" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FooterLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ERT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CreatedTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedUserKey" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateUserKey" Type="Int32" Nullable="false" />
+          <Property Name="IsRowDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="LUShortAgeRestrictionKey" Type="Int64" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VideoPath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Embed" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IsPublic" Type="Boolean" Nullable="false" />
+          <Property Name="IsDraft" Type="Boolean" Nullable="false" />
+          <Property Name="WriterUserKey" Type="Int64" Nullable="false" />
+          <Property Name="LUSysInterfacelanguageKey" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShortChannel">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShortKey" Type="Int64" Nullable="false" />
+          <Property Name="CreatedTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedUserKey" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateUserKey" Type="Int32" Nullable="false" />
+          <Property Name="IsRowDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="LUShortChannelTypeKey" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShortTag">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShortKey" Type="Int64" Nullable="false" />
+          <Property Name="CreatedTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedUserKey" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateUserKey" Type="Int32" Nullable="false" />
+          <Property Name="IsRowDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="LUShortTagTypeKey" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserSecurityNumber" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HashedPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ClientIP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MobileSerialNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastActitiyDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsAnonimousConnect" Type="Boolean" Nullable="false" />
+          <Property Name="IsFBConnect" Type="Boolean" Nullable="false" />
+          <Property Name="IsTWConnect" Type="Boolean" Nullable="false" />
+          <Property Name="IsGGLConnect" Type="Boolean" Nullable="false" />
+          <Property Name="IsEmailConnect" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedUserKey" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateUserKey" Type="Int32" Nullable="false" />
+          <Property Name="IsRowDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="LUSubscriptionTypeKey" Type="Int64" Nullable="false" />
+          <Property Name="ShortBio" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LUSysInterfacelanguageKey" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LUActivity">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUCountry">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUEventType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUGender">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUGroup">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUPointType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUShortAgeRestriction">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUShortChannelType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUShortReportType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUShortShareType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUShortTagType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUSubscriptionType">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUSysInterfaceLanguage">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LUUserStatus">
+          <Key>
+            <PropertyRef Name="RecordKey" />
+          </Key>
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecordKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description_Herew" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="readShorts_DB_DEVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ad" EntityType="Self.Ad" />
+          <EntitySet Name="Short" EntityType="Self.Short" />
+          <EntitySet Name="ShortChannel" EntityType="Self.ShortChannel" />
+          <EntitySet Name="ShortTag" EntityType="Self.ShortTag" />
+          <EntitySet Name="UserAccount" EntityType="Self.UserAccount" />
+          <EntitySet Name="LUActivity" EntityType="Self.LUActivity" />
+          <EntitySet Name="LUCountry" EntityType="Self.LUCountry" />
+          <EntitySet Name="LUEventType" EntityType="Self.LUEventType" />
+          <EntitySet Name="LUGender" EntityType="Self.LUGender" />
+          <EntitySet Name="LUGroup" EntityType="Self.LUGroup" />
+          <EntitySet Name="LUPointType" EntityType="Self.LUPointType" />
+          <EntitySet Name="LUShortAgeRestriction" EntityType="Self.LUShortAgeRestriction" />
+          <EntitySet Name="LUShortChannelType" EntityType="Self.LUShortChannelType" />
+          <EntitySet Name="LUShortReportType" EntityType="Self.LUShortReportType" />
+          <EntitySet Name="LUShortShareType" EntityType="Self.LUShortShareType" />
+          <EntitySet Name="LUShortTagType" EntityType="Self.LUShortTagType" />
+          <EntitySet Name="LUSubscriptionType" EntityType="Self.LUSubscriptionType" />
+          <EntitySet Name="LUSysInterfaceLanguage" EntityType="Self.LUSysInterfaceLanguage" />
+          <EntitySet Name="LUUserStatus" EntityType="Self.LUUserStatus" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="readShorts_DB_DEVModelStoreContainer" CdmEntityContainer="readShorts_DB_DEVEntities">
+          <EntitySetMapping Name="Ad">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.Ad">
+              <MappingFragment StoreEntitySet="Ad">
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Interval" ColumnName="Interval" />
+                <ScalarProperty Name="AdPath" ColumnName="AdPath" />
+                <ScalarProperty Name="AdBody" ColumnName="AdBody" />
+                <ScalarProperty Name="LUShortAgeRestrictionKey" ColumnName="LUShortAgeRestrictionKey" />
+                <ScalarProperty Name="LUSysInterfacelanguageKey" ColumnName="LUSysInterfacelanguageKey" />
+                <ScalarProperty Name="LUCountryKey" ColumnName="LUCountryKey" />
+                <ScalarProperty Name="CreatedTimeStamp" ColumnName="CreatedTimeStamp" />
+                <ScalarProperty Name="LastUpdateTimeStamp" ColumnName="LastUpdateTimeStamp" />
+                <ScalarProperty Name="IsRowDeleted" ColumnName="IsRowDeleted" />
+                <ScalarProperty Name="CreatedUserKey" ColumnName="CreatedUserKey" />
+                <ScalarProperty Name="LastUpdateUserKey" ColumnName="LastUpdateUserKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Short">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.Short">
+              <MappingFragment StoreEntitySet="Short">
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="PicturePath" ColumnName="PicturePath" />
+                <ScalarProperty Name="Quote" ColumnName="Quote" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="FooterText" ColumnName="FooterText" />
+                <ScalarProperty Name="FooterLink" ColumnName="FooterLink" />
+                <ScalarProperty Name="ERT" ColumnName="ERT" />
+                <ScalarProperty Name="CreatedTimeStamp" ColumnName="CreatedTimeStamp" />
+                <ScalarProperty Name="CreatedUserKey" ColumnName="CreatedUserKey" />
+                <ScalarProperty Name="LastUpdateTimeStamp" ColumnName="LastUpdateTimeStamp" />
+                <ScalarProperty Name="LastUpdateUserKey" ColumnName="LastUpdateUserKey" />
+                <ScalarProperty Name="IsRowDeleted" ColumnName="IsRowDeleted" />
+                <ScalarProperty Name="LUShortAgeRestrictionKey" ColumnName="LUShortAgeRestrictionKey" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+                <ScalarProperty Name="Embed" ColumnName="Embed" />
+                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+                <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+                <ScalarProperty Name="WriterUserKey" ColumnName="WriterUserKey" />
+                <ScalarProperty Name="LUSysInterfacelanguageKey" ColumnName="LUSysInterfacelanguageKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShortChannel">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.ShortChannel">
+              <MappingFragment StoreEntitySet="ShortChannel">
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="ShortKey" ColumnName="ShortKey" />
+                <ScalarProperty Name="CreatedTimeStamp" ColumnName="CreatedTimeStamp" />
+                <ScalarProperty Name="CreatedUserKey" ColumnName="CreatedUserKey" />
+                <ScalarProperty Name="LastUpdateTimeStamp" ColumnName="LastUpdateTimeStamp" />
+                <ScalarProperty Name="LastUpdateUserKey" ColumnName="LastUpdateUserKey" />
+                <ScalarProperty Name="IsRowDeleted" ColumnName="IsRowDeleted" />
+                <ScalarProperty Name="LUShortChannelTypeKey" ColumnName="LUShortChannelTypeKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShortTag">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.ShortTag">
+              <MappingFragment StoreEntitySet="ShortTag">
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="ShortKey" ColumnName="ShortKey" />
+                <ScalarProperty Name="CreatedTimeStamp" ColumnName="CreatedTimeStamp" />
+                <ScalarProperty Name="CreatedUserKey" ColumnName="CreatedUserKey" />
+                <ScalarProperty Name="LastUpdateTimeStamp" ColumnName="LastUpdateTimeStamp" />
+                <ScalarProperty Name="LastUpdateUserKey" ColumnName="LastUpdateUserKey" />
+                <ScalarProperty Name="IsRowDeleted" ColumnName="IsRowDeleted" />
+                <ScalarProperty Name="LUShortTagTypeKey" ColumnName="LUShortTagTypeKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccount">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="UserSecurityNumber" ColumnName="UserSecurityNumber" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
+                <ScalarProperty Name="ClientIP" ColumnName="ClientIP" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="MobileSerialNumber" ColumnName="MobileSerialNumber" />
+                <ScalarProperty Name="LastActitiyDate" ColumnName="LastActitiyDate" />
+                <ScalarProperty Name="IsAnonimousConnect" ColumnName="IsAnonimousConnect" />
+                <ScalarProperty Name="IsFBConnect" ColumnName="IsFBConnect" />
+                <ScalarProperty Name="IsTWConnect" ColumnName="IsTWConnect" />
+                <ScalarProperty Name="IsGGLConnect" ColumnName="IsGGLConnect" />
+                <ScalarProperty Name="IsEmailConnect" ColumnName="IsEmailConnect" />
+                <ScalarProperty Name="CreatedTimeStamp" ColumnName="CreatedTimeStamp" />
+                <ScalarProperty Name="CreatedUserKey" ColumnName="CreatedUserKey" />
+                <ScalarProperty Name="LastUpdateTimeStamp" ColumnName="LastUpdateTimeStamp" />
+                <ScalarProperty Name="LastUpdateUserKey" ColumnName="LastUpdateUserKey" />
+                <ScalarProperty Name="IsRowDeleted" ColumnName="IsRowDeleted" />
+                <ScalarProperty Name="LUSubscriptionTypeKey" ColumnName="LUSubscriptionTypeKey" />
+                <ScalarProperty Name="ShortBio" ColumnName="ShortBio" />
+                <ScalarProperty Name="LUSysInterfacelanguageKey" ColumnName="LUSysInterfacelanguageKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUActivity">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUActivity">
+              <MappingFragment StoreEntitySet="LUActivity">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUCountry">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUCountry">
+              <MappingFragment StoreEntitySet="LUCountry">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUEventType">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUEventType">
+              <MappingFragment StoreEntitySet="LUEventType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUGender">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUGender">
+              <MappingFragment StoreEntitySet="LUGender">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUGroup">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUGroup">
+              <MappingFragment StoreEntitySet="LUGroup">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUPointType">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUPointType">
+              <MappingFragment StoreEntitySet="LUPointType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUShortAgeRestriction">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUShortAgeRestriction">
+              <MappingFragment StoreEntitySet="LUShortAgeRestriction">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUShortChannelType">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUShortChannelType">
+              <MappingFragment StoreEntitySet="LUShortChannelType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUShortReportType">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUShortReportType">
+              <MappingFragment StoreEntitySet="LUShortReportType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUShortShareType">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUShortShareType">
+              <MappingFragment StoreEntitySet="LUShortShareType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUShortTagType">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUShortTagType">
+              <MappingFragment StoreEntitySet="LUShortTagType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUSubscriptionType">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUSubscriptionType">
+              <MappingFragment StoreEntitySet="LUSubscriptionType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUSysInterfaceLanguage">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUSysInterfaceLanguage">
+              <MappingFragment StoreEntitySet="LUSysInterfaceLanguage">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LUUserStatus">
+            <EntityTypeMapping TypeName="readShorts_DB_DEVModel.LUUserStatus">
+              <MappingFragment StoreEntitySet="LUUserStatus">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+                <ScalarProperty Name="Description_Herew" ColumnName="Description_Herew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

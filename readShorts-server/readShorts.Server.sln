@@ -1,0 +1,269 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. API", "01. API", "{39D84D15-811C-485A-8FED-9A2D60B52265}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Services", "02. Services", "{46928F21-74AB-40FE-B630-16CEB62E2D4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Business Logic", "03. Business Logic", "{948058B9-A578-4151-9FDC-40CECE4838ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Data Access", "04. Data Access", "{7CF68A26-F1DA-4AAD-B002-D24D9580B060}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Common", "05. Common", "{E2DD7A3F-6894-4BA9-A771-37A55C4EB595}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. Framework", "06. Framework", "{D8E0197A-D6AE-4AE4-B0D6-CE626216431A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A42B3E19-D326-4E73-92BF-726459C50371}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core", "06. Framework\Framework.Core\Framework.Core.csproj", "{9C92164B-6C8F-4F8E-926D-ADE94D2F97F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core.Interfaces", "06. Framework\Framework.Core.Interfaces\Framework.Core.Interfaces.csproj", "{8781027B-87F5-4CA6-9A7E-F90FB1FEC936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.DataAccess.Interfaces", "06. Framework\Framework.DataAccess.Interfaces\Framework.DataAccess.Interfaces.csproj", "{064131AB-EABD-45E5-97C8-4B0D3F550B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.Models", "05. Common\readShorts.Models\readShorts.Models.csproj", "{788086B7-2A95-4E42-BFBD-3A5A0753897F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.Entities", "05. Common\readShorts.Entities\readShorts.Entities.csproj", "{B0F963B3-91DF-420E-AF74-01ECD6642121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.DataAccess", "04. Data Access\readShorts.DataAccess\readShorts.DataAccess.csproj", "{539293DD-7B0D-430C-831A-CCC5AAD6F2FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.DataAccess.Interfaces", "04. Data Access\readShorts.DataAccess.Interfaces\readShorts.DataAccess.Interfaces.csproj", "{B790D2A6-252A-41FA-B8D2-531073AFE7E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.DataAccess.Repositories", "04. Data Access\readShorts.DataAccess.Repositories\readShorts.DataAccess.Repositories.csproj", "{99EED767-0213-45CF-8ED3-1BDCA258FC14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.DataAccess.Repositories.Interfaces", "04. Data Access\readShorts.DataAccess.Repositories.Interfaces\readShorts.DataAccess.Repositories.Interfaces.csproj", "{187A358D-C908-466A-A1AA-20707F810888}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.DataAccess.Testing", "04. Data Access\readShorts.DataAccess.Testing\readShorts.DataAccess.Testing.csproj", "{057CE571-F125-44EA-A68D-46DD77D102D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.BusinessLogic.Bootstrapper", "03. Business logic\readShorts.BusinessLogic.Bootstrapper\readShorts.BusinessLogic.Bootstrapper.csproj", "{3900B48D-6763-4939-82C3-5585380277BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.BusinessLogic", "03. Business logic\readShorts.BusinessLogic\readShorts.BusinessLogic.csproj", "{D66A9952-6C84-4FDF-8692-3B004BCE4F8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.BusinessLogic.Interfaces", "03. Business logic\readShorts.BusinessLogic.Interfaces\readShorts.BusinessLogic.Interfaces.csproj", "{5F0BD78A-44A3-4D00-9553-C6B75174213D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.Services.Interfaces", "02. Services\readShorts.Services.Interfaces\readShorts.Services.Interfaces.csproj", "{58AEDA46-67F4-4723-BE3C-D67DBD886794}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.Services", "02. Services\readShorts.Services\readShorts.Services.csproj", "{12F80397-AD40-46E4-9ADE-B8D161C65660}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{ECBDEC1C-9364-422E-A7D3-EC857C548151}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureVMPublishModule.psm1 = PublishScripts\AzureVMPublishModule.psm1
+		PublishScripts\Publish-WebApplicationVM.ps1 = PublishScripts\Publish-WebApplicationVM.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{21EBF038-89E8-4009-8395-3A4883D65908}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\readShortsAPI-WAWS-dev.json = PublishScripts\Configurations\readShortsAPI-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.API", "01.API\readShorts.API\readShorts.API.csproj", "{7A59256F-E931-4E4E-A299-9D157EED756A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Jobs", "00. Jobs", "{20E74134-B8A9-44D1-915B-20FF0B4C6713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.BusinessLogic.Testing", "03. Business logic\readShorts.BusinessLogic.Testing\readShorts.BusinessLogic.Testing.csproj", "{ABEE0507-DCBD-494D-9FB7-A5965C34B300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.WebJobSendMail", "00.Jobs\readShorts.WebJobSendMail\readShorts.WebJobSendMail.csproj", "{6E82107A-BCE3-4B3F-8702-8B9459AE6A15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "readShorts.DataAccess.Storage", "04. Data Access\readShorts.DataAccess.Storage\readShorts.DataAccess.Storage.csproj", "{477C2796-F82A-4A7C-B160-DEFC85859163}"
+EndProject
+Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C92164B-6C8F-4F8E-926D-ADE94D2F97F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C92164B-6C8F-4F8E-926D-ADE94D2F97F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C92164B-6C8F-4F8E-926D-ADE94D2F97F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C92164B-6C8F-4F8E-926D-ADE94D2F97F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8781027B-87F5-4CA6-9A7E-F90FB1FEC936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8781027B-87F5-4CA6-9A7E-F90FB1FEC936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8781027B-87F5-4CA6-9A7E-F90FB1FEC936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8781027B-87F5-4CA6-9A7E-F90FB1FEC936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064131AB-EABD-45E5-97C8-4B0D3F550B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064131AB-EABD-45E5-97C8-4B0D3F550B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064131AB-EABD-45E5-97C8-4B0D3F550B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064131AB-EABD-45E5-97C8-4B0D3F550B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{788086B7-2A95-4E42-BFBD-3A5A0753897F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{788086B7-2A95-4E42-BFBD-3A5A0753897F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{788086B7-2A95-4E42-BFBD-3A5A0753897F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{788086B7-2A95-4E42-BFBD-3A5A0753897F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F963B3-91DF-420E-AF74-01ECD6642121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F963B3-91DF-420E-AF74-01ECD6642121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F963B3-91DF-420E-AF74-01ECD6642121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F963B3-91DF-420E-AF74-01ECD6642121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539293DD-7B0D-430C-831A-CCC5AAD6F2FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539293DD-7B0D-430C-831A-CCC5AAD6F2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539293DD-7B0D-430C-831A-CCC5AAD6F2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539293DD-7B0D-430C-831A-CCC5AAD6F2FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B790D2A6-252A-41FA-B8D2-531073AFE7E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B790D2A6-252A-41FA-B8D2-531073AFE7E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B790D2A6-252A-41FA-B8D2-531073AFE7E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B790D2A6-252A-41FA-B8D2-531073AFE7E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99EED767-0213-45CF-8ED3-1BDCA258FC14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99EED767-0213-45CF-8ED3-1BDCA258FC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99EED767-0213-45CF-8ED3-1BDCA258FC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99EED767-0213-45CF-8ED3-1BDCA258FC14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{187A358D-C908-466A-A1AA-20707F810888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{187A358D-C908-466A-A1AA-20707F810888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{187A358D-C908-466A-A1AA-20707F810888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{187A358D-C908-466A-A1AA-20707F810888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{057CE571-F125-44EA-A68D-46DD77D102D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{057CE571-F125-44EA-A68D-46DD77D102D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{057CE571-F125-44EA-A68D-46DD77D102D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{057CE571-F125-44EA-A68D-46DD77D102D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3900B48D-6763-4939-82C3-5585380277BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3900B48D-6763-4939-82C3-5585380277BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3900B48D-6763-4939-82C3-5585380277BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3900B48D-6763-4939-82C3-5585380277BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D66A9952-6C84-4FDF-8692-3B004BCE4F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D66A9952-6C84-4FDF-8692-3B004BCE4F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D66A9952-6C84-4FDF-8692-3B004BCE4F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D66A9952-6C84-4FDF-8692-3B004BCE4F8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F0BD78A-44A3-4D00-9553-C6B75174213D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F0BD78A-44A3-4D00-9553-C6B75174213D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F0BD78A-44A3-4D00-9553-C6B75174213D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F0BD78A-44A3-4D00-9553-C6B75174213D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58AEDA46-67F4-4723-BE3C-D67DBD886794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58AEDA46-67F4-4723-BE3C-D67DBD886794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58AEDA46-67F4-4723-BE3C-D67DBD886794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58AEDA46-67F4-4723-BE3C-D67DBD886794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12F80397-AD40-46E4-9ADE-B8D161C65660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F80397-AD40-46E4-9ADE-B8D161C65660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F80397-AD40-46E4-9ADE-B8D161C65660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F80397-AD40-46E4-9ADE-B8D161C65660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A59256F-E931-4E4E-A299-9D157EED756A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A59256F-E931-4E4E-A299-9D157EED756A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A59256F-E931-4E4E-A299-9D157EED756A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A59256F-E931-4E4E-A299-9D157EED756A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABEE0507-DCBD-494D-9FB7-A5965C34B300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABEE0507-DCBD-494D-9FB7-A5965C34B300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABEE0507-DCBD-494D-9FB7-A5965C34B300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABEE0507-DCBD-494D-9FB7-A5965C34B300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E82107A-BCE3-4B3F-8702-8B9459AE6A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E82107A-BCE3-4B3F-8702-8B9459AE6A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E82107A-BCE3-4B3F-8702-8B9459AE6A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E82107A-BCE3-4B3F-8702-8B9459AE6A15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{477C2796-F82A-4A7C-B160-DEFC85859163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{477C2796-F82A-4A7C-B160-DEFC85859163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{477C2796-F82A-4A7C-B160-DEFC85859163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{477C2796-F82A-4A7C-B160-DEFC85859163}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C92164B-6C8F-4F8E-926D-ADE94D2F97F6} = {D8E0197A-D6AE-4AE4-B0D6-CE626216431A}
+		{8781027B-87F5-4CA6-9A7E-F90FB1FEC936} = {D8E0197A-D6AE-4AE4-B0D6-CE626216431A}
+		{064131AB-EABD-45E5-97C8-4B0D3F550B29} = {D8E0197A-D6AE-4AE4-B0D6-CE626216431A}
+		{788086B7-2A95-4E42-BFBD-3A5A0753897F} = {E2DD7A3F-6894-4BA9-A771-37A55C4EB595}
+		{B0F963B3-91DF-420E-AF74-01ECD6642121} = {E2DD7A3F-6894-4BA9-A771-37A55C4EB595}
+		{539293DD-7B0D-430C-831A-CCC5AAD6F2FC} = {7CF68A26-F1DA-4AAD-B002-D24D9580B060}
+		{B790D2A6-252A-41FA-B8D2-531073AFE7E2} = {7CF68A26-F1DA-4AAD-B002-D24D9580B060}
+		{99EED767-0213-45CF-8ED3-1BDCA258FC14} = {7CF68A26-F1DA-4AAD-B002-D24D9580B060}
+		{187A358D-C908-466A-A1AA-20707F810888} = {7CF68A26-F1DA-4AAD-B002-D24D9580B060}
+		{057CE571-F125-44EA-A68D-46DD77D102D4} = {7CF68A26-F1DA-4AAD-B002-D24D9580B060}
+		{3900B48D-6763-4939-82C3-5585380277BA} = {948058B9-A578-4151-9FDC-40CECE4838ED}
+		{D66A9952-6C84-4FDF-8692-3B004BCE4F8B} = {948058B9-A578-4151-9FDC-40CECE4838ED}
+		{5F0BD78A-44A3-4D00-9553-C6B75174213D} = {948058B9-A578-4151-9FDC-40CECE4838ED}
+		{58AEDA46-67F4-4723-BE3C-D67DBD886794} = {46928F21-74AB-40FE-B630-16CEB62E2D4F}
+		{12F80397-AD40-46E4-9ADE-B8D161C65660} = {46928F21-74AB-40FE-B630-16CEB62E2D4F}
+		{21EBF038-89E8-4009-8395-3A4883D65908} = {ECBDEC1C-9364-422E-A7D3-EC857C548151}
+		{7A59256F-E931-4E4E-A299-9D157EED756A} = {39D84D15-811C-485A-8FED-9A2D60B52265}
+		{ABEE0507-DCBD-494D-9FB7-A5965C34B300} = {948058B9-A578-4151-9FDC-40CECE4838ED}
+		{6E82107A-BCE3-4B3F-8702-8B9459AE6A15} = {20E74134-B8A9-44D1-915B-20FF0B4C6713}
+		{477C2796-F82A-4A7C-B160-DEFC85859163} = {7CF68A26-F1DA-4AAD-B002-D24D9580B060}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 20
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://readshorts.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = 06.\u0020Framework\\Framework.Core\\Framework.Core.csproj
+		SccProjectTopLevelParentUniqueName1 = readShorts.Server.sln
+		SccProjectName1 = 06.\u0020Framework/Framework.Core
+		SccLocalPath1 = 06.\u0020Framework\\Framework.Core
+		SccProjectUniqueName2 = 06.\u0020Framework\\Framework.Core.Interfaces\\Framework.Core.Interfaces.csproj
+		SccProjectTopLevelParentUniqueName2 = readShorts.Server.sln
+		SccProjectName2 = 06.\u0020Framework/Framework.Core.Interfaces
+		SccLocalPath2 = 06.\u0020Framework\\Framework.Core.Interfaces
+		SccProjectUniqueName3 = 06.\u0020Framework\\Framework.DataAccess.Interfaces\\Framework.DataAccess.Interfaces.csproj
+		SccProjectTopLevelParentUniqueName3 = readShorts.Server.sln
+		SccProjectName3 = 06.\u0020Framework/Framework.DataAccess.Interfaces
+		SccLocalPath3 = 06.\u0020Framework\\Framework.DataAccess.Interfaces
+		SccProjectUniqueName4 = 05.\u0020Common\\readShorts.Models\\readShorts.Models.csproj
+		SccProjectTopLevelParentUniqueName4 = readShorts.Server.sln
+		SccProjectName4 = 05.\u0020Common/readShorts.Models
+		SccLocalPath4 = 05.\u0020Common\\readShorts.Models
+		SccProjectUniqueName5 = 05.\u0020Common\\readShorts.Entities\\readShorts.Entities.csproj
+		SccProjectTopLevelParentUniqueName5 = readShorts.Server.sln
+		SccProjectName5 = 05.\u0020Common/readShorts.Entities
+		SccLocalPath5 = 05.\u0020Common\\readShorts.Entities
+		SccProjectUniqueName6 = 04.\u0020Data\u0020Access\\readShorts.DataAccess\\readShorts.DataAccess.csproj
+		SccProjectTopLevelParentUniqueName6 = readShorts.Server.sln
+		SccProjectName6 = 04.\u0020Data\u0020Access/readShorts.DataAccess
+		SccLocalPath6 = 04.\u0020Data\u0020Access\\readShorts.DataAccess
+		SccProjectUniqueName7 = 04.\u0020Data\u0020Access\\readShorts.DataAccess.Interfaces\\readShorts.DataAccess.Interfaces.csproj
+		SccProjectTopLevelParentUniqueName7 = readShorts.Server.sln
+		SccProjectName7 = 04.\u0020Data\u0020Access/readShorts.DataAccess.Interfaces
+		SccLocalPath7 = 04.\u0020Data\u0020Access\\readShorts.DataAccess.Interfaces
+		SccProjectUniqueName8 = 04.\u0020Data\u0020Access\\readShorts.DataAccess.Repositories\\readShorts.DataAccess.Repositories.csproj
+		SccProjectTopLevelParentUniqueName8 = readShorts.Server.sln
+		SccProjectName8 = 04.\u0020Data\u0020Access/readShorts.DataAccess.Repositories
+		SccLocalPath8 = 04.\u0020Data\u0020Access\\readShorts.DataAccess.Repositories
+		SccProjectUniqueName9 = 04.\u0020Data\u0020Access\\readShorts.DataAccess.Repositories.Interfaces\\readShorts.DataAccess.Repositories.Interfaces.csproj
+		SccProjectTopLevelParentUniqueName9 = readShorts.Server.sln
+		SccProjectName9 = 04.\u0020Data\u0020Access/readShorts.DataAccess.Repositories.Interfaces
+		SccLocalPath9 = 04.\u0020Data\u0020Access\\readShorts.DataAccess.Repositories.Interfaces
+		SccProjectUniqueName10 = 04.\u0020Data\u0020Access\\readShorts.DataAccess.Testing\\readShorts.DataAccess.Testing.csproj
+		SccProjectTopLevelParentUniqueName10 = readShorts.Server.sln
+		SccProjectName10 = 04.\u0020Data\u0020Access/readShorts.DataAccess.Testing
+		SccLocalPath10 = 04.\u0020Data\u0020Access\\readShorts.DataAccess.Testing
+		SccProjectUniqueName11 = 03.\u0020Business\u0020logic\\readShorts.BusinessLogic.Bootstrapper\\readShorts.BusinessLogic.Bootstrapper.csproj
+		SccProjectTopLevelParentUniqueName11 = readShorts.Server.sln
+		SccProjectName11 = 03.\u0020Business\u0020logic/readShorts.BusinessLogic.Bootstrapper
+		SccLocalPath11 = 03.\u0020Business\u0020logic\\readShorts.BusinessLogic.Bootstrapper
+		SccProjectUniqueName12 = 03.\u0020Business\u0020logic\\readShorts.BusinessLogic\\readShorts.BusinessLogic.csproj
+		SccProjectTopLevelParentUniqueName12 = readShorts.Server.sln
+		SccProjectName12 = 03.\u0020Business\u0020logic/readShorts.BusinessLogic
+		SccLocalPath12 = 03.\u0020Business\u0020logic\\readShorts.BusinessLogic
+		SccProjectUniqueName13 = 03.\u0020Business\u0020logic\\readShorts.BusinessLogic.Interfaces\\readShorts.BusinessLogic.Interfaces.csproj
+		SccProjectTopLevelParentUniqueName13 = readShorts.Server.sln
+		SccProjectName13 = 03.\u0020Business\u0020logic/readShorts.BusinessLogic.Interfaces
+		SccLocalPath13 = 03.\u0020Business\u0020logic\\readShorts.BusinessLogic.Interfaces
+		SccProjectUniqueName14 = 02.\u0020Services\\readShorts.Services.Interfaces\\readShorts.Services.Interfaces.csproj
+		SccProjectTopLevelParentUniqueName14 = readShorts.Server.sln
+		SccProjectName14 = 02.\u0020Services/readShorts.Services.Interfaces
+		SccLocalPath14 = 02.\u0020Services\\readShorts.Services.Interfaces
+		SccProjectUniqueName15 = 02.\u0020Services\\readShorts.Services\\readShorts.Services.csproj
+		SccProjectTopLevelParentUniqueName15 = readShorts.Server.sln
+		SccProjectName15 = 02.\u0020Services/readShorts.Services
+		SccLocalPath15 = 02.\u0020Services\\readShorts.Services
+		SccProjectUniqueName16 = 01.API\\readShorts.API\\readShorts.API.csproj
+		SccProjectTopLevelParentUniqueName16 = readShorts.Server.sln
+		SccProjectName16 = 01.API/readShorts.API
+		SccLocalPath16 = 01.API\\readShorts.API
+		SccProjectUniqueName17 = 03.\u0020Business\u0020logic\\readShorts.BusinessLogic.Testing\\readShorts.BusinessLogic.Testing.csproj
+		SccProjectTopLevelParentUniqueName17 = readShorts.Server.sln
+		SccProjectName17 = 03.\u0020Business\u0020logic/readShorts.BusinessLogic.Testing
+		SccLocalPath17 = 03.\u0020Business\u0020logic\\readShorts.BusinessLogic.Testing
+		SccProjectUniqueName18 = 00.Jobs\\readShorts.WebJobSendMail\\readShorts.WebJobSendMail.csproj
+		SccProjectTopLevelParentUniqueName18 = readShorts.Server.sln
+		SccProjectName18 = 00.Jobs/readShorts.WebJobSendMail
+		SccLocalPath18 = 00.Jobs\\readShorts.WebJobSendMail
+		SccProjectUniqueName19 = 04.\u0020Data\u0020Access\\readShorts.DataAccess.Storage\\readShorts.DataAccess.Storage.csproj
+		SccProjectTopLevelParentUniqueName19 = readShorts.Server.sln
+		SccProjectName19 = 04.\u0020Data\u0020Access/readShorts.DataAccess.Storage
+		SccLocalPath19 = 04.\u0020Data\u0020Access\\readShorts.DataAccess.Storage
+	EndGlobalSection
+EndGlobal
